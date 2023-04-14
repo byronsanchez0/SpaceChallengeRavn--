@@ -1,7 +1,7 @@
 package classes
 
-class U1(): Rocket(){
-    init{
+class U1 : Rocket() {
+    init {
         cost = 100
         weight = 10000
         currentWeight = 10000

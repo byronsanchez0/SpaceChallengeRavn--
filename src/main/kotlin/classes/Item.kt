@@ -1,4 +1,4 @@
 package classes
 
-data class Item (var name: String, var weight: Int) {
+data class Item(var name: String, var weight: Int) {
 }

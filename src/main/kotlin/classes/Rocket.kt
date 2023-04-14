@@ -1,6 +1,6 @@
 package classes
 
-open class Rocket : SpaceShip{
+open class Rocket : SpaceShip {
     var cost = 0
     var weight = 0
     var currentWeight = 0
@@ -11,6 +11,7 @@ open class Rocket : SpaceShip{
     override fun launch(): Boolean {
         return true
     }
+
     override fun land(): Boolean {
         return true
     }

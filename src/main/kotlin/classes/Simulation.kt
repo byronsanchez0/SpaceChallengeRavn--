@@ -26,6 +26,7 @@ class Simulation {
                 rocketU1.carry(item)
             }
         }
+        rocketsU1.add(rocketU1)
         return rocketsU1
     }
 
@@ -33,7 +34,6 @@ class Simulation {
         val rocketsU2 = ArrayList<U2>()
         var rocketU2 = U2()
         for (item in itemsArr) {
-
             if (rocketU2.canCarry(item)) {
                 rocketU2.carry(item)
             } else {
@@ -42,6 +42,7 @@ class Simulation {
                 rocketU2.carry(item)
             }
         }
+        rocketsU2.add(rocketU2)
 
 
         return rocketsU2

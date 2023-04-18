@@ -8,8 +8,11 @@ class Simulation {
         val itemsArray = arrayListOf<Item>()
         for (item in itemsToLoad.lines()) {
             val itemElement = item.split("=")
-            if (itemElement[0] != null && itemElement[1] != null)
-                itemsArray.add(Item(itemElement[0], itemElement[1].toInt()))
+            if (itemElement[0] != null && itemElement[1] != null) itemsArray.add(
+                Item(
+                    itemElement[0], itemElement[1].toInt()
+                )
+            )
         }
         return itemsArray
     }
@@ -51,15 +54,16 @@ class Simulation {
     fun runSimulation(rocketsArrayU1: ArrayList<U1>, rocketsArrayU2: ArrayList<U2>): Array<Int> {
         var totalCostU1 = 0
         var totalCostU2 = 0
-        for (item in rocketsArrayU1) {
-            while (item.launch() || item.land()) {
-                totalCostU1 += item.cost
-            }
+
+        for (rocketU1 in rocketsArrayU1) {
+            do {
+                totalCostU1 += rocketU1.cost
+            } while (rocketU1.launch() || rocketU1.land())
         }
-        for (item in rocketsArrayU2) {
-            while (item.launch() || item.land()) {
-                totalCostU2 += item.cost
-            }
+        for (rocketU2 in rocketsArrayU2) {
+            do {
+                totalCostU2 += rocketU2.cost
+            } while (rocketU2.launch() || rocketU2.land())
         }
         if (totalCostU1 < totalCostU2) {
             println("")
